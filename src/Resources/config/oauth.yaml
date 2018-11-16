@@ -1,0 +1,42 @@
+parameters:
+    vairogs.utils.oauth.provider_factory.class: Vairogs\Utils\Oauth\DependencyInjection\ProviderFactory
+    vairogs.utils.oauth.oauth_registry.class: Vairogs\Utils\Oauth\DependencyInjection\ClientRegistry
+    vairogs.utils.oauth.registry.class: Vairogs\Utils\Oauth\DependencyInjection\ClientRegistry
+
+services:
+    vairogs.utils.oauth.provider_factory:
+        class: '%vairogs.utils.oauth.provider_factory.class%'
+        public: true
+        arguments:
+            - '@router'
+            - '@request_stack'
+
+    vairogs.utils.oauth.oauth_registry:
+        class: '%vairogs.utils.oauth.oauth_registry.class%'
+        public: true
+        arguments:
+            - ~
+        calls:
+            -
+                - setContainer
+                -
+                    - '@service_container'
+
+    vairogs.utils.oauth.registry:
+        class: '%vairogs.utils.oauth.registry.class%'
+        public: true
+        arguments:
+            - ~
+            - ~
+        calls:
+            -
+                - setContainer
+                -
+                    - '@service_container'
+
+    oauth.registry:
+        alias: vairogs.utils.oauth.oauth_registry
+
+    openauth.registry:
+        alias: vairogs.utils.oauth.registry
+        public: true

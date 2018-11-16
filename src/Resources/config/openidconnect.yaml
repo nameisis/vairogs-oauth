@@ -1,0 +1,18 @@
+parameters:
+    vairogs.utils.openidconnect.registry.class: Vairogs\Utils\Oauth\DependencyInjection\ClientRegistry
+
+services:
+    vairogs.utils.openidconnect.registry:
+        class: '%vairogs.utils.openidconnect.registry.class%'
+        public: true
+        arguments:
+            - ~
+        calls:
+            -
+                - setContainer
+                -
+                    - '@service_container'
+
+    openidconnect.registry:
+        alias: vairogs.utils.openidconnect.registry
+        public: true
