@@ -26,6 +26,7 @@
         "symfony/routing": "*",
         "symfony/http-foundation": "*",
         "vairogs/vairogs-core": "dev-master",
+        "vairogs/vairogs-specification": "dev-master",
         "symfony/framework-bundle": "*",
         "abraham/twitteroauth": "*",
         "psr/http-message": "^1",
