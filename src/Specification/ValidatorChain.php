@@ -4,7 +4,7 @@ namespace Vairogs\Utils\Oauth\Specification;
 
 use Lcobucci\JWT\Token;
 use OutOfBoundsException;
-use Vairogs\Utils\Core\Specification\AbstractSpecification;
+use Vairogs\Utils\Specification\AbstractSpecification;
 
 class ValidatorChain
 {
