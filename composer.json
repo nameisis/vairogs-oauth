@@ -1,6 +1,6 @@
 {
     "name": "vairogs/vairogs-oauth",
-    "description": "Real Latvian CMS Utils: OAuth / OpenID / OpenID Connect library",
+    "description": "Utils: OAuth / OpenID / OpenID Connect library",
     "license": "MIT",
     "type": "symfony-bundle",
     "keywords": [
